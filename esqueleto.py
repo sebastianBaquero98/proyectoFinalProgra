@@ -13,8 +13,11 @@ Lt = 'L(t)'
 solutionMethodTitle = 'Método de solución'
 btnSolutionLabel1 = 'Euler adelante'
 btnSolutionLabel2 = 'Euler atrás'
-btnSolutionLabel3 = 'Runge-Kutta 2'
-btnSolutionLabel4 = 'Runge-Kutta 4'
+btnSolutionLabel3 = 'Euler modificado'
+btnSolutionLabel4 = 'Runge-Kutta 2'
+btnSolutionLabel5 = 'Runge-Kutta 4'
+btnSolutionLabel6 = 'solve_ivp'
+
 beta = u'\u03b2'
 fi = u'\u03d5'
 mu = u'\u03bc'
@@ -42,12 +45,17 @@ def eulerAdelante():
 def eulerAtras():
     pass
 
+def eulerModificado():
+    pass
+
 def rungeKutta2():
     pass
 
 def rungeKutta4():
     pass
 
+def solve_ivp():
+    pass
 
 root = Tk()
 root.title('Modelo Tuberculosis')  
@@ -143,11 +151,11 @@ btnParam4 = Button(rTopPanel, text=lmbda, padx=25,background='#ff681f')
 btnParam5 = Button(rTopPanel, text=delta, padx=25,background='#ff681f')
 btnParam6 = Button(rTopPanel, text=ro, padx=25,background='#ff681f')
 btnParam7 = Button(rTopPanel, text=kappa, padx=25,background='#ff681f')
-btnParam8 = Button(rTopPanel, text=r1, padx=25,background='#ff681f')
-btnParam9 = Button(rTopPanel, text=r2, padx=25,background='#ff681f')
+btnParam8 = Button(rTopPanel, text=r1, padx=23,background='#ff681f')
+btnParam9 = Button(rTopPanel, text=r2, padx=23,background='#ff681f')
 btnParam10 = Button(rTopPanel, text=gamma, padx=25,background='#ff681f')
-btnParam11 = Button(rTopPanel, text=d1, padx=25,background='#ff681f')
-btnParam12 = Button(rTopPanel, text=d2, padx=25,background='#ff681f')
+btnParam11 = Button(rTopPanel, text=d1, padx=22,background='#ff681f')
+btnParam12 = Button(rTopPanel, text=d2, padx=22,background='#ff681f')
 
 entryParam1 = Entry(rTopPanel)
 entryParam2 = Entry(rTopPanel)
@@ -190,16 +198,20 @@ entryParam12.grid(row=12,column=1)
 
 # Panel Derecho Inferior
 titleLabelBR = Label(rBottomPanel, text=solutionMethodTitle)
-btnMetodo1 = Button(rBottomPanel, text=btnSolutionLabel1, padx=50, command=eulerAdelante,bg='green')
+btnMetodo1 = Button(rBottomPanel, text=btnSolutionLabel1, padx=50, command=eulerAdelante, background='#FFE5B4')
 btnMetodo2 = Button(rBottomPanel, text=btnSolutionLabel2, padx=60, command=eulerAtras,background='#FFE5B4')
-btnMetodo3 = Button(rBottomPanel, text=btnSolutionLabel3, padx=50, command=rungeKutta2,background='#FFE5B4')
-btnMetodo4 = Button(rBottomPanel, text=btnSolutionLabel4, padx=50, command=rungeKutta4,background='#FFE5B4')
+btnMetodo3 = Button(rBottomPanel, text=btnSolutionLabel3, padx=42, command=eulerModificado,background='#FFE5B4')
+btnMetodo4 = Button(rBottomPanel, text=btnSolutionLabel4, padx=49, command=rungeKutta2,background='#FFE5B4')
+btnMetodo5 = Button(rBottomPanel, text=btnSolutionLabel5, padx=49, command=rungeKutta4, background='#FFE5B4')
+btnMetodo6 = Button(rBottomPanel, text=btnSolutionLabel6, padx=63, command=solve_ivp, background='#FFE5B4')
 
 titleLabelBR.grid(row=0)
 btnMetodo1.grid(row=1)
 btnMetodo2.grid(row=2)
 btnMetodo3.grid(row=3)
 btnMetodo4.grid(row=4)
+btnMetodo5.grid(row=5)
+btnMetodo6.grid(row=6)
 
 
 root.mainloop()

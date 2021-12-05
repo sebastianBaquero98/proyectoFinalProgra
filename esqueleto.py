@@ -1,8 +1,9 @@
-from tkinter import*
+from tkinter import *
+from tkinter import filedialog
 
 # ---------- LABELS ----------
 parameterTitle = 'Párametros'
-btnExtraer = 'Extraer'
+btnExtraer = 'Exportar'
 btnImportar = 'Importar'
 tiempoSimulacion = 'Tiempo de simulación'
 tiempo = 'Años'
@@ -34,10 +35,18 @@ d2= 'd2'
 
 # ----------- MÉTODOS ---------
 def exportar():
-    pass
+    files = [('All Files', '*.*'),
+             ('Python Files', '*.py'),
+             ('Text Document', '*.txt')]
+    file = filedialog.asksaveasfile(filetypes=files, defaultextension=files)
 
 def importar():
-    pass
+    filename = filedialog.askopenfilename(initialdir="/",
+                                            title="Select a File",
+                                            filetypes=(("Text files",
+                                                         "*.txt*"),
+                                                        ("all files",
+                                                        "*.*")))
 
 def eulerAdelante():
     return
@@ -77,8 +86,8 @@ lBottomPanel.pack()
 
 
 #Panel Izquierdo Superior
-btnExportar = Button(lTopPanel , text=btnExtraer, padx=50, fg='white', background='#E13B3B')
-btnImportar = Button(lTopPanel, text=btnImportar, padx=50, fg='white', background='#E13B3B')
+btnExportar = Button(lTopPanel , text=btnExtraer, padx=50, fg='white', background='#E13B3B', command=lambda: exportar())
+btnImportar = Button(lTopPanel, text=btnImportar, padx=50, fg='white', background='#E13B3B', command=importar)
 img = PhotoImage(file="gráfica.PNG")
 
 imgLabel = Label(lTopPanel, image = img)

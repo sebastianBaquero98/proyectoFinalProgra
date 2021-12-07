@@ -4,11 +4,8 @@
     Sebastian Baquero - 201728102
     Juan Camilo - 202010326
 """
-from tkinter import*
-import numpy as np
-import matplotlib.pyplot as plt
 
-# ---------- VARIABLES DEPENDIENTES ----------
+# ---------- IMPORTACIONES ----------
 
 from tkinter import *
 from tkinter import filedialog
@@ -16,10 +13,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 import scipy.optimize as opt
 import scipy.integrate as inte
-
-# ---------- LABELS ----------
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
+# ---------- LABELS ----------
 parameterTitle = 'Párametros'
 btnExtraer = 'Exportar'
 btnImportar = 'Importar'
